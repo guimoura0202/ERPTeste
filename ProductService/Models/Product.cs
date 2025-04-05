@@ -1,14 +1,23 @@
+using Google.Cloud.Firestore;
+
 namespace ProductService.Models
 {
+    [FirestoreData]
     public class Product
     {
-        public int Id { get; set; }
+        [FirestoreDocumentId]
+        public string? Id { get; set; }
+        [FirestoreProperty]
         public string? Name { get; set; }
-        public decimal Price { get; set; }
+        [FirestoreProperty]
+        public double Price { get; set; }
+        [FirestoreProperty]
         public int StockQuantity { get; set; }
-        public int ProviderId { get; set; }
-        public string? ProviderName { get; set; }
+        [FirestoreProperty]
+        public string[]? ProviderId { get; set; }
+        [FirestoreProperty]
         public string? Description { get; set; }
+        [FirestoreProperty]
         public string? ImageUrl { get; set; }
     }
 }
