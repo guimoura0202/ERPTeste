@@ -1,14 +1,25 @@
+using Google.Cloud.Firestore;
+
 namespace PeopleService.Models
 {
-        public class Person
+    [FirestoreData]
+    public class Person
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        [FirestoreDocumentId]
+        public string? Id { get; set; }
+        [FirestoreProperty]
+        public string? Name { get; set; }
+        [FirestoreProperty]
         public string? Email { get; set; }
+        [FirestoreProperty]
         public PersonRole? PersonRole { get; set; }
+        [FirestoreProperty]
         public PersonType? PersonType { get; set; }
+        [FirestoreProperty]
         public string? CpfCnpj { get; set; }
+        [FirestoreProperty]
         public string? Phone { get; set; }
+        [FirestoreProperty]
         public string? Address { get; set; }
     }
 
